@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body{
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    /* background-color: black; */
+    background-color: rgb(255, 162, 0);
+    
+}
+
+.quote{
+    
+    font-size: 1.05rem;
+    font-weight: 700;
+       
+}
+
+
+
+
+/* text class of Enter an Ingredient input */
+.text{
+    opacity: 0.8;
+}
+
+/* as navbar was from bootstrap so removing the bg grey color */
+.bg{
+    background: white;
+}
+
+/* title- your search results */
+.title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: rgb(255, 162, 0);
+    /* color: white; */
+    text-decoration-line:underline;
+}
+.logo{
+    width: 100px;
+    height: 100px;
+    margin-left: -63rem;
+    margin-top: -3rem;
+}
+.container{
+    min-height: 100vh;
+}
+
+/* meal-wrapper is a wrapper class wrapping all classes  */
+.meal-wrapper{
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background:white;
+    text-align: center;
+}
+
+/* .meal-search{
+    margin: 2rem 0;
+} */
+.meal-search cite{
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+
+
+/* class meal search box for customising the input form */
+.meal-search-box{
+    margin: 1.2rem 0;
+    display: flex;
+/* align items basicallyused to align the flexible items of div class 
+stretch is used because it is a textbox and user can input any no of ingredients we dont' know 
+the count of, so stretch will align the items as stretch*/
+    align-items: stretch;
+}
+
+
+/* for form, basically designing the search textbox aving class searhcbox-change */
+/* for search btn */
+.btn{
+    /* to inherit the font-family from parent element */
+    font-family: 'Poppins',sans-serif;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.05rem;
+    /* border: 1px solid; */
+}
+.search-control ,
+.search-btn{
+width: 100%;
+}
+
+.search-control{
+    /* 0 is for padding-top if we increase it by 1rem, it's size got increase  from top*/
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border: 2px solid rgb(255, 162, 0);
+    color:  rgb(255, 162, 0);
+    /* what this outline does is, suppose we changed the color of this serach box, so if
+     we don't include oultine, so when we try to enter in ths search box, the border will 
+     automatically turns to black, so the border doesn't get black when we over on it, we use outline*/
+    /* This element has a black border and a green outline with a width of 10px, it has certain properties too but we mde it disable */
+     outline: 0;
+    /* border-radius: 20px; */
+    /* to include search button within the input search box, we need to set border-radius individually */
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+.search-control::placeholder{
+    color:  rgb(255, 162, 0);
+}
+.search-btn{
+ width: 55px;
+ height:55px;
+ font-size: 1.5rem;
+background:  rgb(255, 162, 0);
+ /* background-color:  rgb(255, 162, 0); */
+ color:  white;
+ border: none;
+ border-top-right-radius:  2rem;
+ border-bottom-right-radius: 2rem;
+ transition: all 0.4s linear;
+}
+
+/* challenge- i need to use hover bcz wasn't able to find what to do for this
+the problem is that whenever mouse was hovering over search option, all the customisation applied 
+changed like the hover, for eg , like we did outline, but here what to do?
+so applied hover with same effects so that even if hover, the effects won't change */
+.search-btn:hover{
+    background:  rgb(255, 162, 0);
+    color:  white;
+    transition: 0.5s ease;
+}
+
+
+/* for search results */
+.meal-result{
+    margin-top: 5rem;
+}
+
+/* meal-item include meal name and meal-img */
+.meal-item{
+
+     text-align: center;
+    margin-left: 1rem;
+    border: 1px solid;
+
+}
+#meal{
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem; */
+    margin: 2.4rem 0;
+    /* margin-left: -5rem; */
+}
+
+.getrecipe-btn{
+    text-decoration: none;
+    background:  rgb(255, 162, 0);
+    color:  white;
+    font-weight: 500;
+    font-size:1rem;
+    padding: 0.30rem 0.10rem ;
+    /* takek size of whole block */
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+     
+}
+
+.getrecipe-btn:hover{
+    background: rgb(255, 162, 0);
+}
+
+/* meal-details */
+.meal-details{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    background: rgb(255, 162, 0);
+    border-radius: 1rem;
+    width: 90%;
+    height: 90%;
+    /* it makes the recipe part scroll */
+    overflow-y: scroll;
+    /* what we have created, that recipe part, will be displaying nothing */
+    display: none;
+    padding: 2rem 0;
+}
+
+.meal-details::-webkit-scrollbar{
+    /* the below is the width of scrollbar  */
+    width: 10px;
+}
+.meal-details::-webkit-scrollbar-thumb{
+    background-color: #f0f0f0;
+    border-radius: 2rem;
+}
+
+/* js related*/
+.showRecipe{
+    display: block;
+}
+ .meal-details-content{
+    margin: 1.5rem;
+ }
+ .meal-details-content p:not(.recipe-category){
+    padding: 0.8rem 0;
+ }
+
+ .recipe-close-btn{
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    background: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+ }
+ .recipe-title{
+    /* spacing between letter of Meals name here */
+    letter-spacing: 1px;
+    /* need some space from bottom */
+    padding-bottom: 1rem;
+
+ }
+
+ /* for category */
+ .recipe-category{
+    background: white;
+    color: rgb(255, 162, 0);
+    font-weight: 600;
+    /* it'll only cover the part within inlin block */
+    display: inline-block;
+    padding: 0.4rem 0.3rem;
+    border-radius: 10px;
+ }
+ 
+ /* for Instructions */
+.recipe-instruct{
+    padding: 1rem 0;
+}
+
+.recipe-meal-img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+/* for recipe-link */
+.recipe-link{
+    margin: 1.4rem 0;
+}
+.recipe-link a{
+    color: white;
+    /* text-decoration: none; */
+    font-size: 1.1rem;
+    font-weight: 700;
+   transition: all 0.4s linear;
+}
+
+.recipe-link:hover{
+    opacity: 0.8;
+}
+
+/* customising js part, where the message was "sorry, we didn't find any meal */
+.notFound{
+    grid-template-columns: 1fr!important;
+    color:rgb(255, 162, 0) ;
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+
+}
+
+
+
+
+
+/* media queries */
+@media (max-width:667px){
+    .logo{
+        margin-left:-15rem;
+    }
+}
+ @media (min-width:600px) {
+    .meal-search-box{
+        width: 540px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    
+ }
+
+@media (min-width:768px ) {
+    #meal{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+        /* padding-bottom: 10rem; */
+    }
+    .meal-details{
+        width: 700px;
+    }
+}
+
+ @media (min-width:992px)
+ {
+    #meal{
+        
+        grid-template-columns: repeat(3,1fr);
+        
+     }
+ }

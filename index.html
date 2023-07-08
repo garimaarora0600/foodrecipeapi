@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Food Recipe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- header section -->
+
+    <div class="container">
+      <div class="meal-wrapper">
+        <div class="meal-search">
+          <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container-fluid bg">
+              <a class="navbar-brand" href="#">
+                <h2 class="title">Find meals of your Choice!</h2></a>
+                 the below button is for navbar button 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  </ul>
+            </div>
+          </nav> -->
+          <img src="./logo.jpg" class="logo">
+          <h2 class="title">Find Meals of Your Choice!!</h2>
+           <!-- The <blockquote> HTML element indicates that the enclosed text is an extended quotation.  -->
+          <!-- using to  write a quotation -->
+          <blockquote class="quote">
+            Laughter is brightest when food is best.<br>
+            <!--The <cite> tag defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).  -->
+            <cite>-Irish Proverb</cite>
+          </blockquote>
+          <!-- <h2 class="title"> Choose meals for your Ingredients!!</h2> -->
+        <!-- The <blockquote> HTML element indicates that the enclosed text is an extended quotation.  -->
+          <!-- using to  write a quotation -->
+          <!-- <blockquote>
+            Laughter is brightest when food is best.<br> -->
+            <!--The <cite> tag defines the title of a creative work (e.g. a book, a poem, a song, a movie, a painting, a sculpture, etc.).  -->
+              <!-- <cite>Irish Proverb</cite>
+            </blockquote> -->
+        
+    <!-- main-section -->
+    <!-- form for user to input the ingredients -->
+    <form >  
+    <div class="meal-search-box">
+        <input type="text" class="search-control " placeholder="Enter an ingredient" id="search-input" aria-describedby="emailHelp">
+        <button type="submit" class="search-btn btn" id="search-btn">
+        <i class="fas fa-search"></i>  
+        </button>
+      </div>
+    </form>
+    
+    <!-- image (search results) -->
+    
+    
+     <div class="meal-result">
+      <h2 class="title">Your Search Results:</h2>
+      <div id="meal">
+      <!-- meal-item -->
+      <!-- <div class="card meal-item" style="width: 20rem;">
+        <img src="./food.jpg" class="card-img-top imgg" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: 700;">French Fries</h5> -->
+          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+          <!-- <a href="#" class="btn-primary getrecipe-btn">Get Recipe </a>
+        </div>
+      </div> -->
+      <!-- not using below anymore bcz we want to use thru API, this is used to customise how it'd look -->
+      <!-- end of meal-item -->
+      <!-- meal-item -->
+      <!-- <div class="card meal-item" style="width: 20rem;">
+        <img src="./food.jpg" class="card-img-top imgg" alt="...">
+        <div class="card-body">
+          <h5 class="card-title" style="font-weight: 700;">French Fries</h5>
+           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+          <!-- <a href="#" class="btn-primary getrecipe-btn">Get Recipe </a>
+        </div>
+      </div>  -->
+      <!-- end of meal-item -->
+      </div>
+    </div>
+      <!-- <div id="meal"> -->
+        <!-- meal-item -->
+        <!-- <div class="meal-item">
+          <div class="meal-img">
+            <img src="./food.jpg" alt="food">
+          </div>
+          <div class="meal-name">
+            <h3>French Fries </h3>
+             <a href="#" class="recipe-btn">Get Recipe </a>
+          </div>
+        </div> -->
+        <!-- end of meal-item -->
+      <!-- </div> -->
+     <!-- </div> -->
+       
+
+     <div class="meal-details">
+      <!-- recipe close btn -->
+      <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <!-- meal-content -->
+      <div class="meal-details-content">
+        <!-- <h2 class="recipe-title">Meals name here</h2>
+        <p class="recipe-category">Category Name</p>
+        <div class="recipe-instructions">
+          <h3>Instructions:</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut aperiam voluptatum animi nulla qui, saepe consequatur voluptates tempora veniam, eveniet esse incidunt facere alias? Sunt voluptatum laudantium incidunt sit itaque.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, eveniet odit officia rerum aperiam voluptate numquam enim repellat reprehenderit minus.</p>
+          </div>
+        <div class="recipe-meal-img">
+          <img src="./food.jpg" alt="">
+        </div>
+        <div class="recipe-link">
+          <a href="#" target="_blank">Watch Video</a>
+        </div> -->
+      </div>
+   </div>
+</div>
+</div>
+    <!-- for the below file, we always need internet connection since it always pick up from internet -->
+    <!-- we're using through cdn links so as to reduct the complexity rather than using vite thru bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
